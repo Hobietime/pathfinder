@@ -8,7 +8,7 @@ class MPCsolver(object):
 			it optimizes a series of control inputs (turn, throttle), the length of which is defined
 			by num_steps"""
 		self.initial_v = tf.placeholder(tf.float32, name="initial_speed")
-		self.initial_phi = tf.placeholder(tf.float32, name="initial_theta")
+		self.initial_theta = tf.placeholder(tf.float32, name="initial_theta")
 		self.targets = tf.placeholder(tf.float32, [2,1,None], name="targets")
 
 		self.turn = tf.get_variable(

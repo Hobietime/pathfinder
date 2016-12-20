@@ -22,7 +22,7 @@ with tf.Graph().as_default():
 		summary_writer = tf.train.SummaryWriter(".", graph=tf.get_default_graph())
 		feed_dict = {
 			solver.initial_v: 1,
-			solver.initial_phi: 0,
+			solver.initial_theta: 0,
 			solver.targets: targets,
 			#solver.acc: accs
 		}
@@ -37,7 +37,7 @@ with tf.Graph().as_default():
 		plt.axis('equal')
 		plt.show()
 		#print(distances)
-		for i in range(2000):
+		for i in range(1000):
 			_, itnum, xpos, ypos, distances = sess.run( [train_op, global_step, solver.x, solver.y, solver.phi], feed_dict)
 			#print(distances)
 		print("done")
